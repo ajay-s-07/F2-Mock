@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function propExists1(a, b) {
+        return hashkey = a.hasOwnProperty('b');
+      }
+      function propExists2(a, b) {
+        return 'b' in a;
+      }
+      console.log(propExists1({ x: "a", y: "b", z: "c" }, "x")); // output: false
+      console.log(propExists2({ x: "a", y: "b", z: "c" }, "x")); // output: false
+      console.log(propExists1({ a: 1, b: 2, c: 3 }, "b")); // output: true
+      console.log(propExists2({ a: 1, b: 2, c: 3 }, "b")); // output: true
+      console.log(propExists1({ x: "a", y: "b", z: undefined }, "k")); // output: false
+      console.log(propExists2({ x: "a", y: "b", z: undefined }, "k")); // output: false
+    </script>
+</body>
+</html>

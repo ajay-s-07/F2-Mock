@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style></style>
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      Write functions to show the sum / difference / product / division of
+      Number 1 and Number 2 in the result field based on the operator selected
+    </h1>
+
+    <div>Number 1: <input type="text" id="number1" /></div>
+    <br />
+    <div>Number 2: <input type="text" id="number2" /></div>
+    <br />
+    <div id="operator">
+      <div>
+        Operator
+      </div>
+      <div id="table">
+              <button id="plus">+</button>;
+              <br>
+              <input type="button" value="-" id="minus" /><br>
+              <input type="button" value="*" id="multi" />
+              <input type="button" value="/" id="divis" />
+      </div>
+    </div>
+    <br />
+    <div>Result: <input type="text" id="result" /></div>
+    <script>
+      // Write your code here
+      let num1 = document.querySelector("#number1");
+      let num2 = document.querySelector("#number2");
+      let result = document.querySelector("#result");
+      
+      let plu = document.querySelector("#plus");
+      let minu = document.querySelector("#minus");
+      let mult = document.querySelector("#multi");
+      let divi = document.querySelector("#divis");
+
+    //   result.value = Number(num1.value) + Number( num2.value);
+    //   console.log(1);
+      
+      function plus(){
+        alert("xyz");
+        result.value = Number(num1.value) + Number( num2.value);
+      }
+      function minus(){
+        result.value = Number(num1.value) - Number( num2.value);
+      }
+      function multi(){
+        result.value = Number(num1.value) * Number( num2.value);
+      }
+      function divis(){
+        result.value = Number(num1.value) / Number( num2.value);
+      }
+      
+    //   plu.addEventListener("click", plus);
+      plu.addEventListener("click", plus);
+      minu.addEventListener("click", minus);
+      mult.addEventListener("click", multi);
+      divi.addEventListener("click", divis);
+    </script>
+  </body>
+</html>

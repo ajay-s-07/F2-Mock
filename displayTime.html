@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+</head>
+<body></body>
+<script>
+    //   showTime();
+    function xTime(x, y) {
+        // Write your code here
+        
+        var count = 0;
+        var timer= setInterval(showTime,1000*(x));
+        function showTime(){
+            const time = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric',second: 'numeric', hour12: true });
+            
+            console.log(time);
+            count++;
+            if(count==y)
+            {
+                clearInterval(timer);
+            }
+            
+        }
+    }
+    xTime(2, 5);
+    
+    /*
+    Expected Output in console example (if the current time is 7:59:41 am):
+    7:59:41 AM
+    7:59:43 AM
+    7:59:45 AM
+    7:59:47 AM
+    7:59:49 AM
+    */
+</script>
+</html>
