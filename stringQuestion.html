@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp-user" > 
+    <h3 id="str"></h3>
+    <!-- "this is a boy"-curr -->
+    <button id="ok">Enter</button>
+    <button id="fNr" >Find and replace</button>
+    
+    <button id="upper">To uppercase</button>
+    <button id="lower">To lowercase</button>
+    <button id="concat">Concat</button>
+    
+    <script>
+        
+        document.querySelector("#ok").addEventListener("click",ok)
+        document.querySelector("#fNr").addEventListener("click",findNrep)
+        document.querySelector("#upper").addEventListener("click",upperCase)
+        document.querySelector("#lower").addEventListener("click",lowerCase)
+        document.querySelector("#concat").addEventListener("click",concatenate)
+        
+        var hstring=document.querySelector("#str");
+        function ok(){
+            
+            hstring.innerText=document.querySelector("#inp-user").value;
+            document.querySelector("#inp-user").value="";
+            
+        }
+        function  findNrep()
+        {
+            
+            let sample= document.querySelector("#inp-user").value;
+            console.log(sample)
+            var s2 =sample.split(",");
+            console.log(s2)
+            // s[0],s[1]
+            let find= s2[0];
+            let replace =s2[1];
+            let check=hstring.innerText.includes(find)
+            console.log(check);
+            
+            if(check){
+                hstring.innerText=  hstring.innerText.replace(find,replace);
+            }
+        }
+
+        function upperCase(){
+            hstring.innerText=hstring.innerText.toUpperCase();
+        }
+        function lowerCase(){
+            hstring.innerText=hstring.innerText.toUpperCase();
+        }
+        function concatenate(){
+            let sample= document.querySelector("#inp-user").value;
+            hstring.innerText=hstring.innerText.concat(" "+sample);
+        }
+ 
+    </script>
+</body>
+</html>
